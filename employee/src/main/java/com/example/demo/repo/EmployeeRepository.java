@@ -23,8 +23,7 @@ public class EmployeeRepository {
 	public String create(Employee employee) {
 		//insert data into DB
 		//generate random number for employee id
-		int randomNumber = RandomGenerator.getDefault().nextInt(10000, 99999);
-		return "I"+randomNumber;
+		return "I"+this.getRandomNumber();
 	}
 	
 	public Employee get(String employeeID) {
@@ -68,5 +67,10 @@ public class EmployeeRepository {
 		
 		return emp;
 	}
+	
+	private int getRandomNumber() {
+	    return (int) ((Math.random() * (10000 - 1000)) + 1000);
+	}
+
 
 }
